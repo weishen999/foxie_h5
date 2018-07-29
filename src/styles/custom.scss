@@ -1,0 +1,16 @@
+@import "./reset";
+@import "./variables";
+@import "./ainmations";
+
+.itv-nothing{
+  padding: 60px 0;
+  text-align: center;
+  color: $font-second;
+}
+
+.itv-body-hidden{
+  overflow: hidden !important;
+  height: 100%;
+}
+
+

@@ -1,0 +1,41 @@
+// 淡入淡出
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s ease;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
+// 从上往下
+.slideDown-enter {
+  opacity: 0;
+  transform: translateY(-100px);
+  &-active{
+    transition: all .2s ease-out;
+  }
+}
+.slideDown-leave {
+  &-active{
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all .2s ease-in;
+  }
+}
+
+// 从下往上
+.slideUp-enter {
+  opacity: 0;
+  transform: translateY(100px);
+  &-active{
+    transition: all .2s ease-out;
+  }
+}
+.slideUp-leave {
+  &-active{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all .2s ease-in;
+  }
+}
