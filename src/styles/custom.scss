@@ -2,15 +2,39 @@
 @import "./variables";
 @import "./ainmations";
 
-.itv-nothing{
-  padding: 60px 0;
-  text-align: center;
-  color: $font-second;
+.p-swiper {
+  height: 210px;
+  .swiper-slide {
+    height: 210px;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      background: $bg;
+      object-fit: cover;
+    }
+  }
+  .desc{
+    position: absolute;
+    bottom:0;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    color: $white;
+    z-index: 2;
+    width: 100%;
+    &:before{
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      height: 30px;
+      width: 100%;
+      background: black;
+      opacity: .7;
+      z-index: -1;
+    }
+  }
 }
-
-.itv-body-hidden{
-  overflow: hidden !important;
-  height: 100%;
-}
-
-

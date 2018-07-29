@@ -43,5 +43,18 @@ export default new Router({
       name: 'AcquaintingPagoda',
       component:(resolve) => require(["@/views/AcquaintingPagoda"], resolve)
     },
+
+    // 各项列表页
+    {
+      path: '/list/:type',
+      name: 'PageList',
+      component:(resolve) => require(["@/views/pageList"], resolve)
+    },
+    // 详情页
+    {
+      path: '/details/:type',
+      name: 'PageList',
+      component:(resolve) => require(["@/views/pageList"], resolve)
+    }
   ]
 })

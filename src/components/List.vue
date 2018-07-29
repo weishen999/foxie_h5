@@ -45,6 +45,19 @@
           </div>
         </li>
       </ul>
+      <!-- 图文混合 -->
+      <ul class="p-list hybrid" v-if="type === 'hybrid'">
+        <li class="img__item hybrid--img" v-for="(item,index) in list" v-if="index === 0">
+          <img class="img" :src="item.pic" alt="">
+          <div class="info">
+            <p>{{ item.remark }}</p>
+            <time>{{ item.updateTime }}</time>
+          </div>
+        </li>
+        <li class="img__item hybrid--text" v-for="item in list">
+          {{ item.remark }}
+        </li>
+      </ul>
     </slot>
   </div>
 </template>
@@ -82,6 +95,7 @@ export default {
   h2 {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: relative;
     font-size: 16px;
     font-weight: bold;
@@ -160,6 +174,8 @@ export default {
     }
   }
   .horizontal{
+    white-space: nowrap;
+    overflow-x: scroll;
     .img__item{
       display: inline-flex;
       flex-direction: column;
@@ -186,7 +202,8 @@ export default {
     }
   }
   .horizontal-2{
-    display: inline-flex;
+    white-space: nowrap;
+    overflow-x: scroll;
     font-size: 16px;
     .img__item{
       display: flex;
@@ -213,6 +230,44 @@ export default {
       }
       & + .img__item{
         margin-left: 6px;
+      }
+    }
+  }
+  .hybrid{
+    &--img{
+      display: flex;
+      font-size: 16px;
+      .img {
+        display: inline-block;
+        width: 120px;
+        height: 72px;
+        border-radius: 4px;
+        background: $bg;
+        object-fit: cover;
+      }
+      .info {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 10px;
+        height: 72px;
+        width: 64%;
+        time {
+          font-size: 12px;
+          color: $font-three;
+        }
+      }
+      & + .img__item{
+        padding-top: 10px;
+      }
+    }
+    &--text{
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      & + .img__item {
+        padding-top: 10px;
+        border-top: 1px solid $border;
       }
     }
   }

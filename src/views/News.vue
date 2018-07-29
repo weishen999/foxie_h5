@@ -1,13 +1,48 @@
 <template>
-
+  <div class="itv-news">
+    <template v-for="item in news" v-if="news">
+      <p-list :title="item.typeName" type="img" :list="item.data" v-if="item.type === 5" :router="{name:'PageList',params:{type:5}}"></p-list>
+      <p-list :title="item.typeName" type="hybrid" :list="item.data" v-if="item.type === 6" :router="{name:'PageList',params:{type:6}}"></p-list>
+      <p-list :title="item.typeName" type="hybrid" :list="item.data" v-if="item.type === 7" :router="{name:'PageList',params:{type:7}}"></p-list>
+    </template>
+  </div>
 </template>
 
 <script>
+  import PList from '../components/List'
+  import Api from '../api'
+
   export default {
-    name: "News"
+    name: "News",
+    components:{PList},
+    created(){
+      this.getNews();
+    },
+    data() {
+      return {
+        news:null,
+      }
+    },
+    methods:{
+      getNews(){
+        Api.getLevel1({
+          indexType:3,
+          pageNo:1,
+          pageSize:3
+        }).then(res=>{
+          if(res.data.code === 0){
+            this.news = res.data.data.list;
+          } else {
+            alert('网络错误，请刷新重试');
+          }
+        }).catch(error => {
+          alert('网络错误，请刷新重试');
+        })
+      },
+    }
   }
 </script>
 
-<style scoped>
+<style lang="scss">
 
 </style>
