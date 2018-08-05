@@ -13,6 +13,7 @@ Vue.config.productionTip = false;
 Vue.prototype.$bus = Bus;
 Vue.prototype.$itv = Itv;
 Vue.filter('dateFormat', Itv.Date.format);
+Vue.filter('cut', Itv.String.cut);
 
 
 /* eslint-disable no-new */

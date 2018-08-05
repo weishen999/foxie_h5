@@ -1,9 +1,9 @@
 <template>
   <div class="itv-policies">
     <template v-for="item in policies" v-if="policies">
-      <p-list :title="item.typeName" type="text" :list="item.data" v-if="item.type === 8" :router="{name:'PageList',params:{type:8}}"></p-list>
-      <p-list :title="item.typeName" type="text" :list="item.data" v-if="item.type === 9" :router="{name:'PageList',params:{type:9}}"></p-list>
-      <p-list :title="item.typeName" type="text" :list="item.data" v-if="item.type === 10" :router="{name:'PageList',params:{type:10}}"></p-list>
+      <p-list :title="item.typeName" type="text" :list="item.data" v-if="item.type === 8" :router="{name:'PageList',params:{type:item.type}}"></p-list>
+      <p-list :title="item.typeName" type="text" :list="item.data" v-if="item.type === 9" :router="{name:'PageList',params:{type:item.type}}"></p-list>
+      <p-list :title="item.typeName" type="text" :list="item.data" v-if="item.type === 10" :router="{name:'PageList',params:{type:item.type}}"></p-list>
     </template>
   </div>
 </template>
@@ -27,7 +27,7 @@
       getPolicies(){
         Api.getLevel1({
           indexType:4,
-          pageNo:1,
+          pageNo:0,
           pageSize:3
         }).then(res=>{
           if(res.data.code === 0){

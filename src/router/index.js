@@ -48,13 +48,13 @@ export default new Router({
     {
       path: '/list/:type',
       name: 'PageList',
-      component:(resolve) => require(["@/views/pageList"], resolve)
+      component:(resolve) => require(["@/views/PageList"], resolve)
     },
     // 详情页
     {
-      path: '/details/:type',
-      name: 'PageList',
-      component:(resolve) => require(["@/views/pageList"], resolve)
+      path: '/details/:id',
+      name: 'Details',
+      component:(resolve) => require(["@/views/Details"], resolve)
     }
   ]
 })

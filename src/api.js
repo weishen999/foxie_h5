@@ -6,11 +6,11 @@ export default {
    * @param params
    * @returns {AxiosPromise<any>}
    * indexType - 1：首页 2：本会介绍 3：新闻中心 4：政策法规 5：慈善公益 6：名寺宝刹
-   * pageNo - 从1开始，由前端控制
+   * pageNo:1 - 从1开始，由前端控制
    * pageSize - 每页大小，由前端控制
    */
   getLevel1(params){
-   return axios.get('/api/pageIndex/',{params:params});
+   return axios.get('/api/pageIndex',{params:params});
   },
 
   /**
@@ -24,6 +24,15 @@ export default {
    * 16.上海佛协, 17.慈善公益 18.当代 19.近代 20.古代
    */
   getLevel2(params){
-    return axios.get('/api/sort_article/',{params:params});
+    return axios.get('/api/sort_article',{params:params});
   },
+
+  /**
+   * 获取详情
+   * @param params
+   * @returns {AxiosPromise<any>}
+   */
+  getDetails(params){
+    return axios.get(`/api/detail`,{params:params})
+  }
 }

@@ -1,9 +1,9 @@
 <template>
   <div class="itv-news">
     <template v-for="item in news" v-if="news">
-      <p-list :title="item.typeName" type="img" :list="item.data" v-if="item.type === 5" :router="{name:'PageList',params:{type:5}}"></p-list>
-      <p-list :title="item.typeName" type="hybrid" :list="item.data" v-if="item.type === 6" :router="{name:'PageList',params:{type:6}}"></p-list>
-      <p-list :title="item.typeName" type="hybrid" :list="item.data" v-if="item.type === 7" :router="{name:'PageList',params:{type:7}}"></p-list>
+      <p-list :title="item.typeName" type="img" :list="item.data" v-if="item.type === 5" :router="{name:'PageList',params:{type:item.type}}"></p-list>
+      <p-list :title="item.typeName" type="hybrid" :list="item.data" v-if="item.type === 6" :router="{name:'PageList',params:{type:item.type}}"></p-list>
+      <p-list :title="item.typeName" type="hybrid" :list="item.data" v-if="item.type === 7" :router="{name:'PageList',params:{type:item.type}}"></p-list>
     </template>
   </div>
 </template>
@@ -27,7 +27,7 @@
       getNews(){
         Api.getLevel1({
           indexType:3,
-          pageNo:1,
+          pageNo:0,
           pageSize:3
         }).then(res=>{
           if(res.data.code === 0){
