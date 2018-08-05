@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+const _domain = "http://137.116.142.190:80";
+
 export default {
   /**
    * 获取一级信息
@@ -10,7 +12,7 @@ export default {
    * pageSize - 每页大小，由前端控制
    */
   getLevel1(params){
-   return axios.get('/api/pageIndex',{params:params});
+   return axios.get(`${_domain}/web/api/pageIndex`,{params:params});
   },
 
   /**
@@ -24,7 +26,7 @@ export default {
    * 16.上海佛协, 17.慈善公益 18.当代 19.近代 20.古代
    */
   getLevel2(params){
-    return axios.get('/api/sort_article',{params:params});
+    return axios.get(`${_domain}/web/api/sort_article`,{params:params});
   },
 
   /**
@@ -33,6 +35,6 @@ export default {
    * @returns {AxiosPromise<any>}
    */
   getDetails(params){
-    return axios.get(`/api/detail`,{params:params})
+    return axios.get(`${_domain}/web/api/detail`,{params:params})
   }
 }
