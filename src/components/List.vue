@@ -30,7 +30,7 @@
             <img class="img" :src="imgURL + item.pic" alt="">
             <div class="info">
               <h3>{{item.title}}</h3>
-              <p>{{ item.remark | cut(20)}}</p>
+              <p>{{ item.remark | cut(45)}}</p>
             </div>
           </li>
         </slot>
@@ -200,9 +200,11 @@
           margin-left: 6px;
         }
         .info {
+          padding: 8px;
           p {
             color: $font-three;
             font-size: 12px;
+            white-space: pre-wrap;
           }
         }
       }

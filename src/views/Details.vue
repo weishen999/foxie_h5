@@ -21,13 +21,11 @@
     },
     methods:{
       getDetails(){
-        console.log(this.$route.params.id);
         Api.getDetails({
           id:this.$route.params.id
         }).then(res=>{
           this.content = res.data.data;
-        }).catch(error => {
-          alert('网络错误，请刷新重试');
+          this.$bus.title = this.content.title;
         })
       },
     }

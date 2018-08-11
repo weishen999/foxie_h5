@@ -27,8 +27,7 @@
           type:this.$route.params.type,
         }).then(res=>{
           this.list = res.data.data;
-        }).catch(error => {
-          alert('网络错误，请刷新重试');
+          this.$bus.title = this.list.content[0].sortName + '列表';
         })
       },
     }

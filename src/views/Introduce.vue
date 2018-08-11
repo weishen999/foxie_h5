@@ -22,6 +22,7 @@
     components:{PList},
     created(){
       this.getIntroduce();
+      this.$bus.title = '本会介绍';
     },
     data() {
       return {
@@ -41,8 +42,6 @@
           } else {
             alert('网络错误，请刷新重试');
           }
-        }).catch(error => {
-          alert('网络错误，请刷新重试');
         })
       },
     }

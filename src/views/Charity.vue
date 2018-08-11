@@ -25,6 +25,7 @@
     name: "Charity",
     components:{ swiper, swiperSlide,PList},
     created(){
+      this.$bus.title = '慈善公益';
       this.getCharity();
     },
     data() {
@@ -49,8 +50,6 @@
           } else {
             alert('网络错误，请刷新重试');
           }
-        }).catch(error => {
-          alert('网络错误，请刷新重试');
         })
       },
     }

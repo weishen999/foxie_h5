@@ -28,6 +28,7 @@
     name: "Index",
     components:{ swiper, swiperSlide,PList},
     created(){
+      this.$bus.title = '首页';
       this.getIndex();
     },
     data() {
@@ -52,8 +53,6 @@
           } else {
             alert('网络错误，请刷新重试');
           }
-        }).catch(error => {
-          alert('网络错误，请刷新重试');
         })
       },
     }

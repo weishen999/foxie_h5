@@ -17,6 +17,7 @@
     components:{PList},
     created(){
       this.getNews();
+      this.$bus.title = '新闻中心';
     },
     data() {
       return {
@@ -35,8 +36,6 @@
           } else {
             alert('网络错误，请刷新重试');
           }
-        }).catch(error => {
-          alert('网络错误，请刷新重试');
         })
       },
     }

@@ -27,6 +27,7 @@
     name: "Charity",
     components:{ swiper, swiperSlide,PList},
     created(){
+      this.$bus.title = '名寺宝刹';
       this.getAp();
     },
     data() {
@@ -51,8 +52,6 @@
           } else {
             alert('网络错误，请刷新重试');
           }
-        }).catch(error => {
-          alert('网络错误，请刷新重试');
         })
       },
     }
