@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const _domain = "http://137.116.142.190:80";
+const _domain = "http://47.100.205.149:80";
 
 export default {
   /**
