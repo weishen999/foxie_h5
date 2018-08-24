@@ -10,7 +10,7 @@
           <router-link class="p-nav-bar__item" id="New" :class="{'active':$route.name === 'News'}" :to="{name:'News'}">新闻中心</router-link>
           <router-link class="p-nav-bar__item" id="Policies" :class="{'active':$route.name === 'Policies'}" :to="{name:'Policies'}">政策法规</router-link>
           <router-link class="p-nav-bar__item" id="Charity" :class="{'active':$route.name === 'Charity'}" :to="{name:'Charity'}">慈善公益</router-link>
-          <router-link class="p-nav-bar__item" id="AcquaintingPagoda" :class="{'active':$route.name === 'AcquaintingPagoda'}" :to="{name:'AcquaintingPagoda'}">名寺宝刹</router-link>
+          <router-link class="p-nav-bar__item" id="AcquaintingPagoda" :class="{'active':$route.name === 'AcquaintingPagoda'}" :to="{name:'AcquaintingPagoda'}">寺院场所</router-link>
         </ul>
       </div>
     </nav>

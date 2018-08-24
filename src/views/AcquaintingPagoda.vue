@@ -9,8 +9,8 @@
       </swiper-slide>
     </swiper>
     <template v-for="item in ap.list" v-if="ap">
-      <p-list :title="item.typeName" type="horizontal-2" :list="item.data" v-if="item.type === 14" :router="{name:'PageList',params:{type:item.type}}"></p-list>
-      <p-list :title="item.typeName" :list="item.data" v-if="item.type === 15" :router="{name:'PageList',params:{type:item.type}}">
+      <p-list :title="item.typeName" type="horizontal-2" :list="item.data" v-if="item.type === 23" :router="{name:'PageList',params:{type:item.type}}"></p-list>
+      <p-list :title="item.typeName" :list="item.data" v-if="item.type === 1" :router="{name:'PageList',params:{type:item.type}}">
         <img :src="imgURL + item.pic" alt="">
       </p-list>
     </template>
@@ -27,7 +27,7 @@
     name: "Charity",
     components:{ swiper, swiperSlide,PList},
     created(){
-      this.$bus.title = '名寺宝刹';
+      this.$bus.title = '寺院场所';
       this.getAp();
     },
     data() {

@@ -8,13 +8,13 @@
         </div>
       </swiper-slide>
     </swiper>
-    <p-list title="沪佛动态" type="img" :list="index.list[1].data" :router="{name:'PageList',params:{type:5}}"></p-list>
-    <p-list title="各地法讯" type="img" :list="index.list[8].data" :router="{name:'PageList',params:{type:10}}"></p-list>
-    <p-list title="上海佛协" type="text" :list="index.list[10].data" :router="{name:'PageList',params:{type:16}}"></p-list>
-    <p-list title="现任会长" type="alone" :list="index.list[4].data" :router="{name:'PageList',params:{type:2}}"></p-list>
-    <p-list title="历届领导" type="horizontal" :list="index.list[5].data" :router="{name:'PageList',params:{type:3}}"></p-list>
-    <p-list title="国家政策" type="text" :list="index.list[6].data" :router="{name:'PageList',params:{type:8}}"></p-list>
-    <p-list title="名寺宝刹" type="horizontal-2" class="p-pagoda" :list="index.list[9].data" :router="{name:'PageList',params:{type:14}}"></p-list>
+    <p-list title="沪佛动态" type="img" :list="index.list[1].data" :router="{name:'PageList',params:{type:3}}"></p-list>
+    <p-list title="各地法规" type="img" :list="index.list[8].data" :router="{name:'PageList',params:{type:28}}"></p-list>
+    <p-list title="上海佛协" type="text" :list="index.list[10].data" :router="{name:'PageList',params:{type:18}}"></p-list>
+    <p-list title="现任会长" type="alone" :list="index.list[4].data" :router="{name:'PageList',params:{type:20}}"></p-list>
+    <p-list title="历届领导" type="horizontal" :list="index.list[5].data" :router="{name:'PageList',params:{type:21}}"></p-list>
+    <p-list title="国家政策" type="text" :list="index.list[6].data" :router="{name:'PageList',params:{type:26}}"></p-list>
+    <p-list title="寺院场所" type="horizontal-2" class="p-pagoda" :list="index.list[9].data" :router="{name:'PageList',params:{type:23}}"></p-list>
   </div>
 </template>
 

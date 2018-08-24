@@ -4,11 +4,9 @@
       <p-list title="领导成员" :list="item.data" v-if="item.type === 1">
         <img :src="imgURL + item.pic" alt="">
       </p-list>
-      <p-list :title="item.typeName" type="alone" :list="item.data" v-if="item.type === 2" :router="{name:'PageList',params:{type:item.type}}"></p-list>
-      <p-list :title="item.typeName" type="horizontal" :list="item.data" v-if="item.type === 3" :router="{name:'PageList',params:{type:item.type}}"></p-list>
-      <p-list :title="item.typeName" type="hybrid" :list="item.data" v-if="item.type === 18" :router="{name:'PageList',params:{type:item.type}}"></p-list>
-      <p-list :title="item.typeName" type="hybrid" :list="item.data" v-if="item.type === 19" :router="{name:'PageList',params:{type:item.type}}"></p-list>
-      <p-list :title="item.typeName" type="hybrid" :list="item.data" v-if="item.type === 20" :router="{name:'PageList',params:{type:item.type}}"></p-list>
+      <p-list :title="item.typeName" type="alone" :list="item.data" v-if="item.type === 20" :router="{name:'PageList',params:{type:item.type}}"></p-list>
+      <p-list :title="item.typeName" type="horizontal" :list="item.data" v-if="item.type === 21" :router="{name:'PageList',params:{type:item.type}}"></p-list>
+      <p-list :title="item.typeName" type="hybrid" :list="item.data" v-if="item.type >=12 && item.type <=14" :router="{name:'PageList',params:{type:item.type}}"></p-list>
     </template>
   </div>
 </template>
