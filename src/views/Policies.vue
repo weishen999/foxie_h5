@@ -1,9 +1,9 @@
 <template>
   <div class="itv-policies">
     <template v-for="item in policies" v-if="policies">
+      <p-list :title="item.typeName" type="text" :list="item.data" v-if="item.type === 25" :router="{name:'PageList',params:{type:item.type}}"></p-list>
       <p-list :title="item.typeName" type="text" :list="item.data" v-if="item.type === 26" :router="{name:'PageList',params:{type:item.type}}"></p-list>
       <p-list :title="item.typeName" type="text" :list="item.data" v-if="item.type === 27" :router="{name:'PageList',params:{type:item.type}}"></p-list>
-      <p-list :title="item.typeName" type="text" :list="item.data" v-if="item.type === 28" :router="{name:'PageList',params:{type:item.type}}"></p-list>
     </template>
   </div>
 </template>

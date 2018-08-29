@@ -9,8 +9,8 @@
       </swiper-slide>
     </swiper>
     <template v-for="item in charity.list" v-if="charity">
-      <p-list :title="item.typeName" type="horizontal" :list="item.data" v-if="item.type === 1" :router="{name:'PageList',params:{type:item.type}}"></p-list>
-      <p-list :title="item.typeName" type="text" :list="item.data" v-if="item.type === 36" :router="{name:'PageList',params:{type:item.type}}"></p-list>
+      <p-list :title="item.typeName" type="horizontal" :list="item.data" v-if="item.type === 34" :router="{name:'PageList',params:{type:item.type}}"></p-list>
+      <p-list :title="item.typeName" type="text" :list="item.data" v-if="item.type === 35" :router="{name:'PageList',params:{type:item.type}}"></p-list>
     </template>
   </div>
 </template>

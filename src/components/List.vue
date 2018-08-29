@@ -1,5 +1,5 @@
 <template>
-  <div class="p-list-wrapper">
+  <div class="p-list-wrapper" v-if="list.length > 0">
     <h2>{{title}} <span class="more" @click="$router.push(router)" v-if="$route.name !== 'PageList'">更多></span></h2>
     <slot>
       <!-- 图类型 -->
@@ -121,7 +121,7 @@
       }
     }
     .p-list {
-      padding: 10px;
+      padding: 10px 0;
     }
     .img {
       .img__item {
