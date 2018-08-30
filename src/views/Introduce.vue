@@ -2,7 +2,8 @@
   <div class="itv-introduce">
     <template v-for="item in introduce" v-if="introduce">
       <p-list title="领导成员" :list="item.data" v-if="item.type === 0">
-        <img :src="imgURL + item.pic" alt="">
+        <img :src="imgURL + item.pic" alt="" v-if="item.pic">
+        <img :src="item.pic" alt="" v-else>
       </p-list>
       <p-list :title="item.typeName" type="alone" :list="item.data" v-if="item.type === 19" :router="{name:'PageList',params:{type:item.type}}"></p-list>
       <p-list :title="item.typeName" type="horizontal" :list="item.data" v-if="item.type === 20" :router="{name:'PageList',params:{type:item.type}}"></p-list>

@@ -5,7 +5,8 @@
       <!-- 图类型 -->
       <ul class="p-list img" v-if="type === 'img'">
         <li class="img__item" v-for="item in list" @click="$router.push({name:'Details',params:{id:item.id}})">
-          <img class="img" :src="imgURL + item.pic" alt="">
+          <img class="img" :src="imgURL + item.pic" alt="" v-if="item.pic">
+          <img class="img" :src="item.pic" alt="" v-else>
           <div class="info">
             <p>{{ item.remark | cut(20) }}</p>
             <time>{{ item.updateTime }}</time>
@@ -20,14 +21,16 @@
       </ul>
       <!-- 人物介绍 -->
       <div class="p-list alone" v-if="type === 'alone'">
-        <img class="img" :src="imgURL + list[0].pic" alt="">
+        <img class="img" :src="imgURL + list[0].pic" alt="" v-if="list[0].pic">
+        <img class="img" :src="list[0].pic" alt="" v-else>
         <p class="desc">{{list[0].remark | cut(75)}}</p>
       </div>
       <!-- 左右滑动 -->
       <ul class="p-list horizontal" v-if="type === 'horizontal'">
         <slot name="horizontal">
           <li class="img__item" v-for="item in list" @click="$router.push({name:'Details',params:{id:item.id}})">
-            <img class="img" :src="imgURL + item.pic" alt="">
+            <img class="img" :src="imgURL + item.pic" alt="" v-if="item.pic">
+            <img class="img" :src="item.pic" alt="" v-else>
             <div class="info">
               <h3>{{item.title}}</h3>
               <p>{{ item.remark | cut(45)}}</p>
@@ -38,7 +41,8 @@
       <!-- 左右滑动2 -->
       <ul class="p-list horizontal-2" v-if="type === 'horizontal-2'">
         <li class="img__item" v-for="item in list" @click="$router.push({name:'Details',params:{id:item.id}})">
-          <img class="img" :src="imgURL + item.pic" alt="">
+          <img class="img" :src="imgURL + item.pic" alt="" v-if="item.pic">
+          <img class="img" :src="item.pic" alt="" v-else>
           <div class="info">
             <h3>{{item.title | cut(8)}}</h3>
             <p>{{ item.remark | cut(30)}}</p>
@@ -48,7 +52,8 @@
       <!-- 图文混合 -->
       <ul class="p-list hybrid" v-if="type === 'hybrid'">
         <li class="img__item hybrid--img" v-for="(item,index) in list" v-if="index === 0" @click="$router.push({name:'Details',params:{id:item.id}})">
-          <img class="img" :src="imgURL + item.pic" alt="">
+          <img class="img" :src="imgURL + item.pic" alt="" v-if="item.pic">
+          <img class="img" :src="item.pic" alt="" v-else>
           <div class="info">
             <p>{{ item.remark | cut(20)}}</p>
             <time>{{ item.updateTime }}</time>

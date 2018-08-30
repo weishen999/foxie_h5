@@ -3,7 +3,8 @@
     <swiper class="p-swiper" :options="bacteriaOption">
       <swiper-slide class="item" v-for="(img,i) in charity.image">
         <div @click="$router.push({name:'Details',params:{id:img.id}})">
-          <img :src="imgURL + img.pic" alt="">
+           <img :src="imgURL + img.pic" alt="" v-if="img.pic">
+           <img :src="img.pic" alt="" v-else>
           <p class="desc">{{img.remark | cut(20)}} <span class="page"><span style="font-weight: bold">{{ i + 1 }}</span>/{{charity.image.length}}</span></p>
         </div>
       </swiper-slide>
