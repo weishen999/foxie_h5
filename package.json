@@ -10,9 +10,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "PDo": "git+https://github.com/interval-design/utils-js.git",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1",
-    "itv-utils": "git+https://github.com/interval-design/utils-js.git"
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

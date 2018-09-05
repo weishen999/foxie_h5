@@ -4,16 +4,16 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Bus from './bus'
-import Itv from 'itv-utils'
+import PDo from "PDo"
 // import VConsole from "vconsole";
 
 // 初始化
 // let vConsole = new VConsole();
 Vue.config.productionTip = false;
 Vue.prototype.$bus = Bus;
-Vue.prototype.$itv = Itv;
-Vue.filter('dateFormat', Itv.Date.format);
-Vue.filter('cut', Itv.String.cut);
+Vue.prototype.$PDo = PDo;
+Vue.filter('dateFormat', PDo.Date.format);
+Vue.filter('cut', PDo.String.cut);
 
 
 /* eslint-disable no-new */
