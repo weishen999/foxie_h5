@@ -10,7 +10,7 @@
       </swiper-slide>
     </swiper>
     <p-list title="沪佛动态" type="img" :list="index.list[1].data" :router="{name:'PageList',params:{type:2}}"></p-list>
-    <p-list title="各地法规" type="img" :list="index.list[8].data" :router="{name:'PageList',params:{type:27}}"></p-list>
+    <p-list title="地方法规" type="text" :list="index.list[8].data" :router="{name:'PageList',params:{type:27}}"></p-list>
     <p-list title="上海佛协" type="text" :list="index.list[10].data" :router="{name:'PageList',params:{type:17}}"></p-list>
     <p-list title="现任会长" type="alone" :list="index.list[4].data" :router="{name:'PageList',params:{type:19}}"></p-list>
     <p-list title="历届领导" type="horizontal" :list="index.list[5].data" :router="{name:'PageList',params:{type:20}}"></p-list>

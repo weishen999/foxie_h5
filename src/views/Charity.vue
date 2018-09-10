@@ -10,8 +10,8 @@
       </swiper-slide>
     </swiper>
     <template v-for="item in charity.list" v-if="charity">
-      <p-list :title="item.typeName" type="horizontal" :list="item.data" v-if="item.type === 34" :router="{name:'PageList',params:{type:item.type}}"></p-list>
-      <p-list :title="item.typeName" type="text" :list="item.data" v-if="item.type === 35" :router="{name:'PageList',params:{type:item.type}}"></p-list>
+      <p-list :title="item.typeName" type="horizontal" :list="item.data" v-if="item.type === 35" :router="{name:'PageList',params:{type:item.type}}"></p-list>
+      <p-list :title="item.typeName" type="text" :list="item.data" v-if="item.type === 34" :router="{name:'PageList',params:{type:item.type}}"></p-list>
     </template>
   </div>
 </template>
@@ -44,7 +44,7 @@
         Api.getLevel1({
           indexType:5,
           pageNo:0,
-          pageSize:3
+          pageSize:10
         }).then(res=>{
           if(res.data.code === 0){
             this.charity = res.data.data;
