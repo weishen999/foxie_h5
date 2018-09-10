@@ -5,7 +5,7 @@
         <img :src="imgURL + item.pic" alt="" v-if="item.pic">
         <img :src="item.pic" alt="" v-else>
       </p-list>
-      <p-list :title="item.typeName" type="alone" :list="item.data" v-if="item.type === 19" :router="{name:'PageList',params:{type:item.type}}"></p-list>
+      <p-list :title="item.typeName" type="alone" :list="item.data" v-if="item.type === 19" :router="{name:'Details',params:{id:item.data[0].id}}"></p-list>
       <p-list :title="item.typeName" type="horizontal" :list="item.data" v-if="item.type === 20" :router="{name:'PageList',params:{type:item.type}}"></p-list>
       <p-list :title="item.typeName" type="hybrid" :list="item.data" v-if="item.type >=11 && item.type <=13" :router="{name:'PageList',params:{type:item.type}}"></p-list>
     </template>

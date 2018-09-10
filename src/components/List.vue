@@ -64,6 +64,7 @@
         </li>
       </ul>
     </slot>
+    <p v-if="$route.name === 'PageList'" class="pullUp">{{ pullUpLoadText }}</p>
   </div>
 </template>
 
@@ -87,6 +88,10 @@
       list: {
         type: Array
       },
+      pullUpLoadText:{
+        type: String,
+        default:"上拉加载更多..."
+      }
     },
     data() {
       return {
@@ -103,6 +108,8 @@
     margin-top: 10px;
     padding: 8px 16px;
     background: $white;
+    float: left;
+    width: 100%;
     h2 {
       display: flex;
       justify-content: space-between;
@@ -287,6 +294,10 @@
           border-top: 1px solid $border;
         }
       }
+    }
+    .pullUp{
+      text-align: center;
+      color: $font-three;
     }
   }
 </style>
