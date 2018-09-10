@@ -5,7 +5,7 @@
         <div @click="$router.push({name:'Details',params:{id:img.id}})">
           <img :src="imgURL + img.pic" alt="" v-if="img.pic">
           <img :src="img.pic" alt="" v-else>
-          <p class="desc">{{img.remark | cut(20)}} <span class="page"><span style="font-weight: bold">{{ i + 1 }}</span>/{{index.image.length}}</span></p>
+          <p class="desc">{{img.title | cut(20)}} <span class="page"><span style="font-weight: bold">{{ i + 1 }}</span>/{{index.image.length}}</span></p>
         </div>
       </swiper-slide>
     </swiper>
@@ -29,7 +29,7 @@
     name: "Index",
     components:{ swiper, swiperSlide,PList},
     created(){
-      this.$bus.title = '首页';
+      this.$bus.title = '上海佛教网';
       this.getIndex();
     },
     data() {

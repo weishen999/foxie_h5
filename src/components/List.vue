@@ -8,7 +8,7 @@
           <img class="img" :src="imgURL + item.pic" alt="" v-if="item.pic">
           <img class="img" :src="item.pic" alt="" v-else>
           <div class="info">
-            <p>{{ item.remark | cut(20) }}</p>
+            <p>{{ item.title | cut(20) }}</p>
             <time>{{ item.updateTime }}</time>
           </div>
         </li>
@@ -16,7 +16,7 @@
       <!-- 文字类型 -->
       <ul class="p-list text" v-if="type === 'text'">
         <li class="img__item" v-for="item in list" :key="item.id" @click="$router.push({name:'Details',params:{id:item.id}})">
-          {{ item.remark}}
+          {{ item.title}}
         </li>
       </ul>
       <!-- 人物介绍 -->
@@ -33,7 +33,7 @@
             <img class="img" :src="item.pic" alt="" v-else>
             <div class="info">
               <h3>{{item.title}}</h3>
-              <p>{{ item.remark | cut(45)}}</p>
+              <p>{{ item.remark | cut(43)}}</p>
             </div>
           </li>
         </slot>
@@ -55,12 +55,12 @@
           <img class="img" :src="imgURL + item.pic" alt="" v-if="item.pic">
           <img class="img" :src="item.pic" alt="" v-else>
           <div class="info">
-            <p>{{ item.remark | cut(20)}}</p>
+            <p>{{ item.title | cut(20)}}</p>
             <time>{{ item.updateTime }}</time>
           </div>
         </li>
         <li class="img__item hybrid--text" v-for="item in list" @click="$router.push({name:'Details',params:{id:item.id}})">
-          {{ item.remark }}
+          {{ item.title }}
         </li>
       </ul>
     </slot>
