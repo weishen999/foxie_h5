@@ -1,26 +1,34 @@
 <template>
-  <div class="p-page-list">
-    <p-list :title="list[0].sortName" type="text" :list="list" v-if="list.length > 0" :pullUpLoadText="pullUpLoadText"></p-list>
-    <div class="loading" v-show="loading">
-      <img src="../assets/loading.svg">
-      <span class="text">加载中...</span>
+  <div class="p-search">
+    <div class="p-input">
+      <input type="text" v-model="val" placeholder="请输入搜索内容">
+      <span class="search" @click="getSearch">搜索</span>
+    </div>
+    <div class="p-page-list">
+      <p-list title="搜索结果" type="text" :list="list" v-if="list.length > 0" :pullUpLoadText="pullUpLoadText"></p-list>
+      <p v-if="list.length === 0" class="p-nothing">暂无结果</p>
+      <div class="loading" v-show="loading">
+        <img src="../assets/loading.svg">
+        <span class="text">加载中...</span>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import PList from "../components/List";
 import Api from "../api";
+import PList from "../components/List";
 import Bscroll from "better-scroll";
 
 export default {
-  name: "pageList",
+  name: "Search",
   components: { PList },
   created() {
-    this.getList();
+    this.$bus.title = "搜索";
   },
   data() {
     return {
+      val: "",
       list: [],
       page: 0,
       total: null,
@@ -29,12 +37,12 @@ export default {
     };
   },
   methods: {
-    getList() {
+    getSearch() {
       this.loading = true;
-      Api.getLevel2({
-        pageNo: this.page,
+      Api.getSearch({
+        pageNo: 0,
         pageSize: 20,
-        type: this.$route.params.type
+        searchName: this.val
       }).then(res => {
         if (res.data.code === 0) {
           setTimeout(() => {
@@ -44,7 +52,6 @@ export default {
             this.list.push(element);
           });
           this.total = res.data.data.totalElements;
-          this.$bus.title = this.list[0].sortName + "列表";
           this.$nextTick(() => {
             if (!this.scroll) {
               this.scroll = new Bscroll(".p-page-list", {
@@ -60,7 +67,7 @@ export default {
                       this.pullUpLoadText = "没有更多了";
                     } else {
                       this.page++;
-                      this.getList();
+                      this.getSearch();
                     }
                   }
                 });
@@ -74,35 +81,50 @@ export default {
         }
       });
     }
+  },
+  watch: {
+    val() {
+      this.list = [];
+    }
   }
 };
 </script>
 
 <style lang="scss">
-.p-page-list {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  .loading {
+@import "../styles/variables.scss";
+.p-search {
+  margin-top: 87px !important;
+  .p-page-list {
+    height: 80vh;
+    overflow: visible;
+  }
+  .p-input {
     position: fixed;
+    top: 56px;
     left: 50%;
-    top: 40%;
-    width: 80px;
-    height: 80px;
-    background-color: #1f1f1f;
-    opacity: 0.7;
-    border-radius: 5px;
-    z-index: 99999;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    img {
-      width: 100%;
-      height: 60%;
-      object-fit: contain;
+    z-index: 10;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $white;
+    margin: auto;
+    overflow: hidden;
+    border-bottom: 1px solid $border;
+    input {
+      height: 100%;
+      padding: 0 20px;
+      flex: 1;
+      font-size: 14px;
     }
-    .text {
-      color: #fff;
-      font-size: 12px;
+    .search {
+      height: 100%;
+      width: 80px;
+      background: $border;
+      text-align: center;
+      line-height: 50px;
     }
   }
 }

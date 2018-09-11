@@ -13,6 +13,12 @@ export default new Router({
       meta: {nav: true},
       component:(resolve) => require(["@/views/Index"], resolve)
     },
+    // 搜索
+    {
+      path: '/search',
+      name: 'Search',
+      component:(resolve) => require(["@/views/search"], resolve)
+    },
     // 本会介绍
     {
       path: '/introduce',

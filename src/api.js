@@ -36,5 +36,13 @@ export default {
    */
   getDetails(params){
     return axios.get(`${_domain}/web/api/detail`,{params:params})
+  },
+
+  /**
+   * 搜索
+   * @param {*} params
+   */
+  getSearch(params){
+    return axios.get(`${_domain}/web/api/search`,{params:params})
   }
 }

@@ -2,8 +2,8 @@
   <div id="app" class="p-wrapper">
     <nav class="p-nav">
       <router-link class="link" :to="{name:'Index'}"><img src="./assets/logo.png" class="logo" title="上海佛教网" alt="上海佛教网"></router-link>
-      <!--<i class="search"></i>-->
-      <div class="p-nav-wrap">
+      <i class="search" @click="$router.push({name:'Search'})"></i>
+      <div class="p-nav-wrap" v-if="$route.name !== 'Search'">
         <ul class="p-nav-bar">
           <router-link class="p-nav-bar__item" id="Index" :class="{'active':$route.name === 'Index'}" :to="{name:'Index'}">首页</router-link>
           <router-link class="p-nav-bar__item" id="Introduce" :class="{'active':$route.name === 'Introduce'}" :to="{name:'Introduce'}">本会介绍</router-link>

@@ -1,6 +1,6 @@
 <template>
   <div class="p-list-wrapper" v-if="list.length > 0">
-    <h2>{{title}} <span class="more" @click="$router.push(router)" v-if="$route.name !== 'PageList'">更多></span></h2>
+    <h2>{{title}} <span class="more" @click="$router.push(router)" v-if="$route.name !== 'PageList' && $route.name !== 'Search'">更多></span></h2>
     <slot>
       <!-- 图类型 -->
       <ul class="p-list img" v-if="type === 'img'">
@@ -64,7 +64,7 @@
         </li>
       </ul>
     </slot>
-    <p v-if="$route.name === 'PageList'" class="pullUp">{{ pullUpLoadText }}</p>
+    <p v-if="pullUpLoadText" class="pullUp">{{ pullUpLoadText }}</p>
   </div>
 </template>
 
@@ -90,7 +90,6 @@
       },
       pullUpLoadText:{
         type: String,
-        default:"上拉加载更多..."
       }
     },
     data() {
